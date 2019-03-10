@@ -1,6 +1,6 @@
 
 
-      var characters = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+      var characters = ["Homer Simpson", "Archer", "Minions"];
 
       function displayCharacterInfo() {
 
