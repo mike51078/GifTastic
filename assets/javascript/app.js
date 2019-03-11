@@ -17,25 +17,17 @@
             
             var characterDiv = $("<div class='character'>");
 
-            // Storing the rating data
             var rating = response.Rated;
 
-            // Creating an element to have the rating displayed
-            var pOne = $("<p>").text("Rating: " + rating);
+            var ratingDisplay = $("<p>").text("Rating: " + rating);
 
-            // Displaying the rating
-            characterDiv.append(pOne);
+            var characterImage = $("<img>");
 
-                                            //   // Retrieving the URL for the image
-                                            //   var imgURL = response.Poster;
+            characterImage.attr("src", results.images.fixed_height.url);
 
-                                            //   // Creating an element to hold the image
-                                            //   var image = $("<img>").attr("src", imgURL);
+            characterDiv.append(ratingDisplay);
+            characterDiv.append(characterImage)
 
-                                            //   // Appending the image
-                                            //   characterDiv.append(image);
-
-            // Putting the entire movie above the previous movies
             $("#buttons-view").prepend(characterDiv);
                 });
 
