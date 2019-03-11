@@ -15,21 +15,27 @@
 
             var results = response.data;
             
-            var characterDiv = $("<div class='character'>");
+            for (var i = 0; i < results.length; i++) {
 
-            var rating = response.Rated;
+                var characterDiv = $("<div class='character'>");
 
-            var ratingDisplay = $("<p>").text("Rating: " + rating);
+                var ratingDisplay = $("<p>").text("Rating: " + results[i].rating);
 
-            var characterImage = $("<img>");
+                var characterImage = $('<img id = "ciShowing>"></img>');
 
-            characterImage.attr("src", results.images.fixed_height.url);
+                characterImage.attr("src", results[i].images.fixed_height_still.url);
 
-            characterDiv.append(ratingDisplay);
-            characterDiv.append(characterImage)
+                $("#ciShowing").on("click", 
+                    characterImage.attr("src", results[i].images.fixed_height.url)
+                );
 
-            $("#buttons-view").prepend(characterDiv);
-                });
+                characterDiv.append(ratingDisplay);
+                characterDiv.append(characterImage)
+
+                $("#buttons-view").append(characterDiv);
+            
+            }
+        });
 
       }
 
@@ -48,10 +54,11 @@
           a.text(characters[i]);
 
           $("#buttons-view").append(a);
+
         }
       }
 
-      $('#add-character').on("click", function(event) {
+      $("#add-character").on("click", function(event) {
         event.preventDefault();
 
         var character = $("#character-input").val().trim();
@@ -61,6 +68,6 @@
         renderButtons();
       });
 
-      $(document).on("click", ".character-btn", displayCharacterInfo);
+    $(document).on("click", ".character-btn", displayCharacterInfo);
 
-      renderButtons();
+    renderButtons();
