@@ -1,11 +1,11 @@
-
+$(document).ready(function() {
 
       var characters = ["Homer Simpson", "Archer", "Minions"];
 
       function displayCharacterInfo() {
 
         var character = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&api_key=wABYUPbOL923Ngb9coOwmarOJ0o6rh4m&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&api_key=wABYUPbOL923Ngb9coOwmarOJ0o6rh4m&limit=10&rating=g";
 
         $.ajax({
             url: queryURL,
@@ -17,25 +17,37 @@
             
             for (var i = 0; i < results.length; i++) {
 
-                var characterDiv = $("<div class='character'>");
+                var characterDiv = $("<div class='character' id = 'float'>");
 
                 var ratingDisplay = $("<p>").text("Rating: " + results[i].rating);
 
-                var characterImage = $('<img id = "ciShowing>"></img>');
+                var characterImage = $('<img>');
 
                 characterImage.attr("src", results[i].images.fixed_height_still.url);
-
-                $("#ciShowing").on("click", 
-                    characterImage.attr("src", results[i].images.fixed_height.url)
-                );
+                characterImage.attr("class", "gif");
+                characterImage.attr("data-state", "still");
+                characterImage.attr("data-animate", results[i].images.fixed_height.url);
+                characterImage.attr("data-still", results[i].images.fixed_height_still.url);
 
                 characterDiv.append(ratingDisplay);
                 characterDiv.append(characterImage)
 
-                $("#buttons-view").append(characterDiv);
-            
+                $("#buttons-view").prepend(characterDiv);
             }
-        });
+
+            $(".gif").on("click", function(){
+                var state = $(this).attr("data-state");
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                } else {
+                    $(this).attr("src", $(this).attr("data-still"))
+                    $(this).attr("data-state", "still");
+                };
+                })
+        
+        
+            });
 
       }
 
@@ -71,3 +83,5 @@
     $(document).on("click", ".character-btn", displayCharacterInfo);
 
     renderButtons();
+
+})

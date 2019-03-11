@@ -1,4 +1,18 @@
 
     button, div, form, input {
       margin: 10px;
+    };
+
+    body {
+        background-image: (src = 'assets/images/background.jpg');
+        height: 100%;
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+        overflow: auto;
+    }
+
+    #float {
+        float: left;
+        margin: 10px;
     }
