@@ -1,27 +1,31 @@
-
+/* providing margin for various items */
 button, div, form, input {
     margin: 10px;
 }
 
+/* providing styling for button allowing for user input of cartoon character */
 #add-character {
 font-weight: bold;
 border-radius: 10px;
 border-style: solid;
 border-color: black;
-    background-color: yellow;
-    padding: 15px;
-    font-size: 20px;
+background-color: yellow;
+padding: 15px;
+font-size: 20px;
 }
 
+/* styling for text next to user input */
 #inputInfo {
     font-weight: bold;
     font-size: 25px;
 }
 
+/* additional styling for page header */
 h1 {
     font-weight: bold;
 }
 
+/* styling for page background */
 html, body {
     background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/mCz7hqj/videoblocks-4k-cartoon-sun-burst-seamless-loop-motion-background-yellow-purple_r3va2eril_thumbnail-full01.png');
     background-color: yellow;
@@ -32,19 +36,19 @@ html, body {
     overflow: auto;
 }
 
+/* provides for floating and spacing of gif's added to web page allowing them to flow left to right */
 #float {
     float: left;
     margin: 10px;
 }
 
+/* provides styling for line located between buttons showing cartoon characters and gif's displayed */
 hr {
     border-color: black;
     border-width: 1.5px;
 }
 
-
-
-
+/* provides styling for the buttons generated for each cartoon character and allowing them to flash */
 button {
     font-weight: bold;
     background-color: #004A7F;
