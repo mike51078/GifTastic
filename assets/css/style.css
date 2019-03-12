@@ -23,6 +23,9 @@ font-size: 20px;
 /* additional styling for page header */
 h1 {
     font-weight: bold;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 80px;
+    text-align: center;
 }
 
 /* styling for page background */
