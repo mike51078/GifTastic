@@ -19,7 +19,7 @@ $(document).ready(function() {
 
                 var characterDiv = $("<div class='character' id = 'float'>");
 
-                var ratingDisplay = $("<p>").text("Rating: " + results[i].rating);
+                var ratingDisplay = $("<p font-weight = 'bold'>").text("Rating: " + results[i].rating);
 
                 var characterImage = $('<img>');
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
                 characterDiv.append(ratingDisplay);
                 characterDiv.append(characterImage)
 
-                $("#buttons-view").prepend(characterDiv);
+                $("#container").prepend(characterDiv);
             }
 
             $(".gif").on("click", function(){
@@ -57,7 +57,7 @@ $(document).ready(function() {
 
         for (var i = 0; i < characters.length; i++) {
 
-          var a = $("<button>");
+          var a = $("<button id = 'styleButtons'>");
 
           a.addClass("character-btn");
 
